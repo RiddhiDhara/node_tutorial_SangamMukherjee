@@ -1,0 +1,111 @@
+Express.js Functions
+
+-> express.static() -	Middleware to serve static files (e.g., CSS, JS, images) from a directory.
+-> express.Router() -	Creates a modular, mountable route handler to organize routes into separate files or logic.
+-> express.json() -	Middleware to parse incoming JSON payloads. Automatically sets Content-Type: application/json.
+-> express.urlencoded() -	Middleware to parse URL-encoded payloads (e.g., form-data).
+
+App Properties
+
+-> app.locals -	An object for app-wide variables accessible in templates (e.g., app.locals.title = "My App").
+-> app.mountpath -	The path where the app is mounted (useful in sub-apps).
+-> app.router - Contains the router instance used for the app (used internally).
+
+App Events
+
+-> mount -	Triggered when a sub-app is mounted on a parent app.
+
+App Methods
+
+-> app.all() - 	Matches all HTTP methods (GET, POST, PUT, etc.) for a specified route.
+-> app.delete() -	Handles HTTP DELETE requests for a specified route.
+-> app.disable() -	Disables a configuration setting by name.
+-> app.disabled() -	Checks if a configuration setting is disabled.
+-> app.enable() -	Enables a configuration setting by name.
+-> app.enabled() -	Checks if a configuration setting is enabled.
+-> app.engine() -	Registers a custom template engine.
+-> app.get() -	Retrieves HTTP GET routes or app configuration values.
+-> app.listen() -	Starts the server on a specified port.
+-> app.METHOD() -	Generic method for all HTTP methods (e.g., app.get(), app.post()).
+-> app.param() -	Defines middleware for processing route parameters (e.g., id in /user/:id).
+-> app.path() -	Returns the path on which the app is mounted.
+-> app.post() -	Handles HTTP POST requests for a specified route.
+-> app.put() -	Handles HTTP PUT requests for a specified route.
+-> app.render() -	Renders a view using the template engine set in the app.
+-> app.route() -	Chains route handlers for a specific route (e.g., GET, POST, etc.).
+-> app.set() -	Sets a configuration value for the app.
+-> app.use() -	Adds middleware to the app (executed for every incoming request).
+
+Request Properties
+
+-> req.app -	Reference to the app instance that handles the request.
+-> req.baseUrl -	The base path where the current route is mounted.
+-> req.url -   returns the URL of the incoming request without the base URL
+-> req.body -	Contains parsed request body data (requires middleware like express.json() or express.urlencoded()).
+-> req.cookies -	Contains parsed cookies (requires cookie-parsing middleware).
+-> req.fresh -	A Boolean indicating whether the resource is still fresh (HTTP caching).
+-> req.host -	Hostname of the request.
+-> req.hostname -	Hostname from the Host header of the request.
+-> req.ip -	The IP address of the request.
+-> req.ips -	An array of IPs if the app is behind a proxy.
+-> req.method -	HTTP method used in the request (e.g., GET, POST).
+-> req.originalUrl -	The original request URL before routing.
+-> req.params -	Route parameters (e.g., :id in /user/:id).
+-> req.path -	Path of the request (does not include query string).
+-> req.protocol -	Protocol of the request (e.g., http or https).
+-> req.query -	Query string parameters in key-value format.
+-> req.res -	Reference to the response object.
+-> req.route -	Current route matched by the router.
+-> req.secure -	Boolean indicating if the request was made via HTTPS.
+-> req.signedCookies -	Signed cookies sent with the request (requires cookie-parsing middleware).
+-> req.stale -	Boolean indicating if the resource is stale (HTTP caching).
+-> req.subdomains -	Subdomain portion of the host.
+-> req.xhr -	Boolean indicating if the request is an AJAX call (checks for X-Requested-With header).
+
+Request Methods
+
+-> req.accepts() -	Checks if the request accepts a specified content type.
+-> req.acceptsCharsets() -	Checks if the request accepts a specified character set.
+-> req.acceptsEncodings() -	Checks if the request accepts a specified encoding.
+-> req.acceptsLanguages() -	Checks if the request accepts a specified language.
+-> req.get() -	Retrieves the value of a specified HTTP request header.
+-> req.is() -	Checks if the request’s content type matches a specified type.
+-> req.range() -	Parses the Range header and returns the specified range.
+
+Response Properties
+
+-> res.app -	Reference to the app instance handling the response.
+-> res.headersSent -	Boolean indicating if headers have been sent.
+-> res.locals -	An object used to pass data to templates rendered during the request.
+
+Response Methods
+
+-> res.append() -	Appends a header value to an existing header.
+-> res.attachment() -	Sets the Content-Disposition header to make the response downloadable.
+-> res.cookie() -	Sets a cookie in the response.
+-> res.clearCookie() -	Clears a previously set cookie.
+-> res.download() -	Prompts the client to download a file.
+-> res.end() -	Ends the response without sending data.
+-> res.format() -	Responds with different formats based on Accept header.
+-> res.get() -	Retrieves the value of a response header.
+-> res.json() -	Sends a JSON response.
+-> res.jsonp() -	Sends a JSONP response.
+-> res.links() -	Sets the Link header field for navigation.
+-> res.location() -	Sets the Location header.
+-> res.redirect() -	Redirects the client to a different URL.
+-> res.render() -	Renders a view template.
+-> res.send() -	Sends data (string, buffer, or object) in the response.
+-> res.sendFile() -	Sends a file as the response.
+-> res.sendStatus() -	Sets the HTTP status and sends its textual representation.
+-> res.set() -	Sets response headers.
+-> res.status() -	Sets the HTTP status code for the response.
+-> res.type() -	Sets the Content-Type for the response.
+-> res.vary() -	Adds a header to specify how the response varies by request headers.
+
+Router Methods
+
+-> router.all() -	Matches all HTTP methods (GET, POST, etc.) for a specific route.
+-> router.METHOD() -	Defines handlers for a specific HTTP method (e.g., router.get() or router.post()).
+-> router.param() -	Defines middleware for handling route parameters.
+-> router.route() -	Chains route handlers for a specific path (e.g., .get().post()).
+-> router.use() -	Adds middleware for the router.

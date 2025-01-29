@@ -1,0 +1,54 @@
+This tutorial is from Sangram Mukherjee from youtube 
+
+Node.js has a variety of commands that can be used to interact with the runtime, manage dependencies, and develop applications. Below is a categorized list of commonly used Node.js commands:
+
+notes : 
+
+
+// require path
+-> path-module - provides utilities to work with file and directories path
+-> path.dirname(__filename) – Get Directory Name
+-> path.basename(__filename) – Get File Name
+-> path.extname(__filename) – Get File Extension
+-> path.join() – Joins multiple path segments into a single normalized path.
+-> path.resolve() – Resolves an absolute path by combining given path segments with the current working directory.
+-> path.normalize() - method resolves the given path by removing unnecessary . (current directory) and .. (parent directory) segments.
+-> path.isAbsolute(path) - Checks if the given path is absolute.	
+-> path.relative(from, to) - Returns the relative path from from to to.	
+-> path.parse(path) - Parses a path into root, dir, base, ext, and name.	
+-> path.format(pathObj) - Converts an object {dir, base} into a path string.	
+-> path.sep	- Provides the platform-specific path separator (/ for Linux/macOS, \ for Windows).	 
+-> path.delimiter - Provides the path delimiter used in environment variables.	
+
+// require fs
+-> fs.readFile(path, encoding, callback) - Reads the content of a file asynchronously.	
+-> fs.readFileSync(path, encoding) - Reads the content of a file synchronously.	
+-> fs.writeFile(path, data, callback) - Writes data to a file asynchronously.	
+-> fs.writeFileSync(path, data) - Writes data to a file synchronously.	
+-> fs.appendFile(path, data, callback) - Appends data to a file asynchronously.	
+-> fs.appendFileSync(path, data) - Appends data to a file synchronously.	
+-> fs.unlink(path, callback) - Deletes a file asynchronously.	
+-> fs.unlinkSync(path) - Deletes a file synchronously.	
+-> fs.existsSync(path) - Checks if a file exists synchronously.	
+-> fs.access(path, mode, callback) - Checks file permissions.
+
+-> fs.mkdir(path, callback) - Creates a directory asynchronously.	
+-> fs.mkdirSync(path) - Creates a directory synchronously.	
+-> fs.rmdir(path, callback) - Removes a directory asynchronously.	
+-> fs.rmdirSync(path) - Removes a directory synchronously.	
+-> fs.readdir(path, callback) - Reads contents of a directory asynchronously.	
+-> fs.readdirSync(path) - Reads contents of a directory synchronously.	
+
+
+// require http
+-> http.createServer(callback) - Creates an HTTP server to handle incoming requests and responses asynchronously.
+-> req.url - Retrieves the URL of the incoming HTTP request.
+-> res.writeHead(statusCode, headers) - Sends a response header with the specified status code and headers.
+-> res.end(data) - Ends the response and sends the provided data to the client.
+-> server.listen(port, callback) - Starts the server and listens for incoming connections on the specified port.
+
+
+// this is used in required package EventEmitter which works as eventlistner in js
+-> super()	Calls the parent class constructor.
+-> .emit(eventName, data)	Emits an event with optional data.
+-> .on(eventName, callback)	Registers an event listener.

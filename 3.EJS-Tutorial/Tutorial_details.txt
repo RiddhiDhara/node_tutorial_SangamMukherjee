@@ -1,0 +1,16 @@
+EJS (Embedded JavaScript) is a templating engine for Node.js that allows you to generate HTML dynamically using JavaScript. It enables you to embed JavaScript code inside an HTML file and render dynamic content.
+
+app.set("views", path.join(__dirname, "views")); => is not strictly mandatory, but it is highly recommended if you want to explicitly set the location of your view templates.
+
+
+EJS tags : 
+
+-> <% 'Scriptlet' tag, for control-flow, no output
+-> <%_ ‘Whitespace Slurping’ Scriptlet tag, strips all whitespace before it
+-> <%= Outputs the value into the template (HTML escaped)
+-> <%- Outputs the unescaped value into the template
+-> <%# Comment tag, no execution, no output
+-> <%% Outputs a literal '<%'
+-> %> Plain ending tag
+-> -%> Trim-mode ('newline slurp') tag, trims following newline
+-> _%> ‘Whitespace Slurping’ ending tag, removes all whitespace after it

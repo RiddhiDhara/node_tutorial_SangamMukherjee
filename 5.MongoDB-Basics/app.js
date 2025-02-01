@@ -1,10 +1,11 @@
+require("dotenv").config(); // requiring dotenv for keeping environment variable
 const mongoose = require("mongoose");
 
 // mongoDB connection from mongodb atlas
 
 mongoose
   .connect(
-    "mongodb+srv://riddhidhara2003:riddhidhara2004@cluster0.gxx91.mongodb.net/"
+    process.env.MONGODB_URI
   )
   .then(() => console.log("MongoDB database connected successfully!!"))
   .catch((error) => console.log(error));
@@ -30,14 +31,14 @@ async function runQueryExample() {
 
     // -----------another way
 
-    const newUser = await User.create({
-      name: "updated user",
-      email: "updated@example.com",
-      age: 100,
-      isActive: false,
-      tags: ["alive"],
-    });
-    console.log("created a new user!! ", newUser);
+    // const newUser = await User.create({
+    //   name: "updated user",
+    //   email: "updated@example.com",
+    //   age: 100,
+    //   isActive: false,
+    //   tags: ["alive"],
+    // });
+    // console.log("created a new user!! ", newUser);
 
     //-----------------------------------------------fetch all users
 
@@ -88,15 +89,15 @@ async function runQueryExample() {
 
     //-----------------------------------------------update user on criteria
 
-    const updateUser_id = await User.findByIdAndUpdate(
-      newUser._id,
-      {
-        $set: { age: 150 },
-        $push: { tags: "updated" },
-      },
-      { new: true }
-    );
-    console.log("user updated : ", updateUser_id);
+    // const updateUser_id = await User.findByIdAndUpdate(
+    //   newUser._id,
+    //   {
+    //     $set: { age: 150 },
+    //     $push: { tags: "updated" },
+    //   },
+    //   { new: true }
+    // );
+    // console.log("user updated : ", updateUser_id);
     
   } catch (error) {
     console.log("Error : ", error);

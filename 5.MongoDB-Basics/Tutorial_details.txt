@@ -1,3 +1,12 @@
+dotenv methods :
+
+-> dotenv.config() -	Loads .env file variables into process.env.
+-> dotenv.config({ path: './custom/path/.env' }) -	Loads environment variables from a custom file path.
+-> dotenv.config({ debug: true }) -	Enables debugging for troubleshooting issues.
+-> dotenv.config({ override: true }) -	Overrides existing environment variables with .env values.
+-> dotenv.parse() -	Parses a .env file without applying it to process.env.
+-> process.env.VARIABLE_NAME -	Accesses an environment variable.
+
 MongoDB detailed methods : 
 
 Connection Methods	

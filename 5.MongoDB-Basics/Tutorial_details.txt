@@ -1,0 +1,67 @@
+MongoDB detailed methods : 
+
+Connection Methods	
+
+-> mongoose.connect(uri, options) -	Connects to the MongoDB database.
+-> mongoose.connection.on('event', callback) -	Listens for connection events like open, error, etc.
+-> mongoose.disconnect() -	Disconnects from the MongoDB database.
+
+Model Methods (CRUD Operations)	
+
+-> Model.create(doc, callback) -	Creates and saves a new document in the collection.
+-> Model.insertMany(docs, callback) -	Inserts multiple documents into the collection.
+-> Model.find(query, projection, options) -	Finds documents that match the query and returns an array.
+-> Model.findOne(query, projection, options) -	Finds a single document that matches the query.
+-> Model.findById(id, projection, options) -	Finds a document by its _id.
+-> Model.updateOne(filter, update, options) -	Updates a single document that matches the filter.
+-> Model.updateMany(filter, update, options) -	Updates multiple documents that match the filter.
+-> Model.findOneAndUpdate(filter, update, options) -	Finds a document, updates it, and returns the updated document.
+-> Model.findByIdAndUpdate(id, update, options) -	Finds a document by _id, updates it, and returns the updated document.
+-> Model.deleteOne(filter, options) -	Deletes a single document that matches the filter.
+-> Model.deleteMany(filter, options) -	Deletes multiple documents that match the filter.
+-> Model.findOneAndDelete(filter, options) -	Finds a document, deletes it, and returns the deleted document.
+-> Model.findByIdAndDelete(id, options) -	Finds a document by _id, deletes it, and returns the deleted document.
+
+Query Methods (Modifiers)	
+
+-> query.sort(fields) -	Sorts the query results based on fields.
+-> query.limit(number) -	Limits the number of results returned.
+-> query.skip(number) -	Skips a specified number of documents.
+-> query.select(fields) -	Selects specific fields to include or exclude.
+-> query.populate(field) -	Replaces referenced ObjectId fields with actual document data.
+-> query.exec(callback) -	Executes the query and returns a promise.
+
+Aggregation Methods
+
+-> Model.aggregate(pipeline, options) -	Performs advanced data processing using aggregation pipelines.
+-> $match -	Filters documents that match conditions.
+-> $group -	Groups documents based on a field.
+-> $project -	Specifies which fields to include/exclude.
+-> $sort -	Sorts documents in the aggregation pipeline.
+-> $limit -	Limits the number of documents.
+-> $lookup -	Performs joins between collections.
+-> $unwind -	Deconstructs an array field into separate documents.
+
+Schema & Model Methods
+
+-> schema.methods.methodName = function () {} -	Defines instance methods that can be used on documents.
+-> schema.statics.methodName = function () {} -	Defines static methods that can be used on models.
+-> Model.countDocuments(query, callback) -	Counts documents that match a query.
+-> Model.estimatedDocumentCount() -	Estimates the total number of documents in a collection.
+
+Indexes and Performance Optimization	
+
+-> Model.createIndexes() -	Creates indexes for faster query performance.
+-> Model.ensureIndexes() -	Ensures indexes exist before queries.
+-> Model.collection.createIndex(field, options) -	Manually creates an index on a collection.
+-> Model.collection.dropIndex(indexName) -	Drops a specific index.
+-> Model.collection.getIndexes() -	Retrieves all indexes in a collection.
+
+Transactions (MongoDB with Mongoose)	
+
+-> const session = await mongoose.startSession(); -	Starts a session for transactions.
+-> session.startTransaction(); -	Begins a transaction.
+-> session.commitTransaction(); -	Commits a transaction.
+-> session.abortTransaction(); -	Aborts a transaction.
+-> session.endSession(); -	Ends the session after committing/aborting.
+

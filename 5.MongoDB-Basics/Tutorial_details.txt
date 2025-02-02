@@ -74,3 +74,24 @@ Transactions (MongoDB with Mongoose)
 -> session.abortTransaction(); -	Aborts a transaction.
 -> session.endSession(); -	Ends the session after committing/aborting.
 
+Mongoose Schema built-in properties ( inside mongoose.Schema({i.e. : type , required , etc}))
+
+-> type -	Defines the data type of the field (e.g., String, Number, Boolean, Date, ObjectId, Array).
+-> required -	Ensures that a field must have a value before saving (true or [true, "Custom message"]).
+-> default -	Sets a default value for the field if no value is provided.
+-> unique -	Ensures that the value in this field is unique across all documents.
+-> index -	Creates an index on the field for faster querying.
+-> trim -	Removes leading and trailing spaces (applies only to String type).
+-> lowercase -	Converts the string to lowercase before saving.
+-> uppercase -	Converts the string to uppercase before saving.
+-> enum -	Restricts the value of the field to a predefined set of values.
+-> minlength -	Sets the minimum length of a string field.
+-> maxlength -	Sets the maximum length of a string field.
+-> match -	Specifies a regex pattern that the field must match.
+-> min -	Sets the minimum value for Number and Date types.
+-> max -	Sets the maximum value for Number and Date types.
+-> validate -	Allows custom validation functions for the field.
+-> immutable -	Prevents the field from being modified after creation.
+-> select -	Determines whether the field should be included in query results (true or false).
+-> get -	Defines a function to manipulate the field value when retrieving data.
+-> set -	Defines a function to manipulate the field value before saving it.
